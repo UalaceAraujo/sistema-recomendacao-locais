@@ -1,8 +1,8 @@
-# MyVicinity - Sistema de Recomendação de Locais Baseado em Geolocalização
+# - Sistema de Recomendação de Locais Baseado em Geolocalização
 
 Trabalho de Conclusão de Curso (TCC) em Ciência da Computação.
 
-O MyVicinity é uma plataforma web desenvolvida para analisar a conveniência urbana e a qualidade de localização de qualquer endereço ou coordenada geográfica. Utilizando dados abertos do OpenStreetMap (OSM) via Overpass API, o sistema calcula um índice de pontuação multicritério baseado na proximidade e densidade de serviços essenciais, como saúde, educação, transporte, alimentação, mercados e áreas de lazer.
+ È uma plataforma web desenvolvida para analisar a conveniência urbana e a qualidade de localização de qualquer endereço ou coordenada geográfica. Utilizando dados abertos do OpenStreetMap (OSM) via Overpass API, o sistema calcula um índice de pontuação multicritério baseado na proximidade e densidade de serviços essenciais, como saúde, educação, transporte, alimentação, mercados e áreas de lazer.
 
 ---
 
