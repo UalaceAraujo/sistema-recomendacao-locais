@@ -1,82 +1,82 @@
-# 📍 Sistema de Recomendação de Locais Baseado em Geolocalização (MyVicinity)
+# Sistema de Recomendação de Locais Baseado em Geolocalização
 
-> **Trabalho de Conclusão de Curso (TCC)** apresentado ao Instituto de Ciências Exatas e Tecnologia da Universidade Paulista (UNIP) — Campus Araraquara/SP, como requisito para obtenção do título de Bacharel em Ciência da Computação (2026).
-
----
-
-## 📖 Sobre o Projeto
-
-O acelerado processo de urbanização trouxe desafios complexos para o planejamento urbano e para a escolha consciente de moradia e investimentos imobiliários. Frequentemente, a avaliação da infraestrutura de um bairro é feita de maneira empírica ou subjetiva, ou depende de softwares corporativos de Sistemas de Informação Geográfica (SIG) proprietários, complexos e de alto custo.
-
-O **MyVicinity** é uma plataforma web interativa desenvolvida para democratizar e simplificar a análise espacial urbana. Utilizando dados abertos de Informação Geográfica Voluntária (*Volunteered Geographic Information* - VGI) do **OpenStreetMap**, a aplicação permite selecionar uma coordenada no mapa ou buscar por endereço para identificar, filtrar e quantificar Pontos de Interesse (POIs) — como hospitais, escolas, supermercados, farmácias, restaurantes, parques e transporte público — dentro de um raio delimitado. A partir de um algoritmo de pontuação ponderada espacial, o sistema gera uma nota objetiva (de 0 a 100) indicando a qualidade e a disponibilidade de serviços essenciais no entorno da localidade.
+Trabalho de Conclusão de Curso (TCC) apresentado ao Instituto de Ciências Exatas e Tecnologia da Universidade Paulista (UNIP) — Campus Araraquara/SP, como requisito para a obtenção do título de Bacharel em Ciência da Computação (2026).
 
 ---
 
-## 🎯 Objetivos
+## 1. Descrição do Projecto
 
-* **Objetivo Geral:** Desenvolver um sistema web interativo destinado à avaliação quantitativa das características do entorno de uma localização urbana por meio de dados geoespaciais abertos do OpenStreetMap, convertendo consultas espaciais em indicadores claros e objetivos de infraestrutura.
-* **Mapeamento e Filtragem de POIs:** Estruturar consultas especializadas via **Overpass QL** para extrair pontos de interesse essenciais dentro do raio de abrangência.
-* **Geocodificação Direta e Reversa:** Integrar a **Nominatim API** para conversão de endereços em coordenadas geográficas e vice-versa.
-* **Algoritmo de Cálculo Espacial:** Processar de forma automatizada no backend as distâncias e quantidades de estabelecimentos para formulação do score urbano.
-* **Visualização Cartográfica Dinâmica:** Proporcionar uma interface fluida com renderização do **Leaflet**, destacando locais, categorias e detalhamento interativo.
+O acelerado processo de urbanização trouxe desafios complexos para o planeamento urbano e para a tomada de decisões relativas à escolha de habitação e investimentos imobiliários. Frequentemente, a avaliação da infraestrutura de uma determinada área é realizada de forma empírica ou subjectiva, ou depende de softwares de Sistemas de Informação Geográfica (SIG) proprietários, complexos e associados a elevados custos de aquisição.
+
+Este projecto propõe um sistema web interactivo concebido para viabilizar e simplificar a análise espacial urbana. Utilizando dados abertos de Informação Geográfica Voluntária (*Volunteered Geographic Information* - VGI) provenientes do OpenStreetMap, a aplicação permite selecionar uma coordenada no mapa ou pesquisar um endereço para identificar, filtrar e quantificar Pontos de Interesse (POIs) — tais como unidades de saúde, instituições de ensino, supermercados, farmácias, restaurantes, áreas de lazer e pontos de transporte público — dentro de um raio de abrangência previamente definido. Com recurso a um algoritmo de pontuação ponderada espacial processado no servidor, o sistema atribui uma classificação objectiva (de 0 a 100) representativa da qualidade e disponibilidade dos serviços essenciais no entorno da localização consultada.
 
 ---
 
-## 🚀 Funcionalidades Principais
+## 2. Objectivos
 
-- 🔍 **Busca Inteligente com Debounce:** Pesquisa preditiva de ruas, bairros e cidades com autocompletar via Nominatim.
-- 🗺️ **Mapa Interativo (Leaflet):** Seleção direta de coordenadas no mapa com marcadores coloridos e categorizados para cada tipo de serviço.
-- 📊 **Painel de Score Urbano:** Análise com nota geral ponderada e categorizada (*Excelente*, *Bom*, *Regular*, *Abaixo da média*, *Insuficiente*).
-- 📑 **Detalhamento por Categoria:**
-  - 🛒 Supermercados e Mercados
-  - 💊 Farmácias
-  - ❤️ Unidades de Saúde e Hospitais
-  - 🎓 Educação (Escolas, Faculdades e Creches)
-  - 🌳 Áreas de Lazer e Parques
-  - 🍽️ Alimentação e Restaurantes
-  - 🚌 Transporte Público
-- 📌 **Destaque Visual de Estabelecimentos:** Ao clicar em um local listado no painel lateral, o mapa centraliza e ativa um marcador pulsante no ponto exato.
-- 🌓 **Tema Claro e Escuro (Dark Mode):** Interface adaptável com alternância em tempo real.
+* **Objectivo Geral:** Desenvolver um sistema web interactivo destinado à avaliação quantitativa das características do entorno de uma localização urbana através de dados geoespaciais abertos do OpenStreetMap, transformando consultas espaciais em indicadores mensuráveis de infraestrutura.
+* **Mapeamento e Filtragem de POIs:** Estruturar consultas especializadas através da linguagem Overpass QL para extrair e filtrar pontos de interesse essenciais num raio pré-estabelecido.
+* **Geocodificação Directa e Inversa:** Integrar a Nominatim API para a conversão de endereços em coordenadas geográficas e suporte à geocodificação inversa.
+* **Algoritmo de Cálculo Espacial:** Implementar no backend o processamento das distâncias e volumes de estabelecimentos para gerar a métrica de pontuação ponderada.
+* **Visualização Cartográfica:** Disponibilizar uma interface responsiva baseada na biblioteca Leaflet, renderizando marcadores, categorias e informações de apoio à navegação.
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+## 3. Principais Funcionalidades
 
-### Frontend & Interface
-* **[Next.js](https://nextjs.org/)** (App Router / React 19)
-* **[TypeScript](https://www.typescriptlang.org/)** (Tipagem estática e segurança do código)
-* **[Tailwind CSS v4](https://tailwindcss.com/)** (Estilização baseada em utilitários e paleta OKLCH)
-* **[shadcn/ui](https://ui.shadcn.com/)** & **[Radix UI](https://www.radix-ui.com/)** (Componentes de acessibilidade e design de interface)
-* **[Lucide React](https://lucide.dev/)** (Ícones visuais)
-* **[Leaflet](https://leafletjs.com/)** (Renderização cartográfica de mapas interativos)
-
-### Backend & Serviços Geoespaciais
-* **Next.js API Routes** (Funções Serverless para intermediação e processamento)
-* **[OpenStreetMap](https://www.openstreetmap.org/)** (Base de dados cartográfica aberta)
-* **[Overpass API](https://overpass-api.de/)** (Extração e filtragem de POIs via Overpass QL)
-* **[Nominatim API](https://nominatim.org/)** (Serviço de geocodificação direta e reversa)
+* **Pesquisa de Endereço com Debounce:** Busca textual interactiva com autocompletar e controlo de requisições via Nominatim API.
+* **Mapa Cartográfico Interactivo:** Navegação, seleção directa de coordenadas geográficas no mapa e marcação visual categorizada por tipo de serviço.
+* **Painel de Avaliação Urbana:** Cálculo da pontuação total ponderada acompanhada por classificações normativas (Excelente, Bom, Regular, Abaixo da média e Insuficiente).
+* **Categorias de Serviços Analisadas:**
+  * Supermercados e Mercados
+  * Farmácias
+  * Unidades de Saúde e Hospitais
+  * Instituições de Ensino (Escolas, Faculdades e Creches)
+  * Áreas Verdes e Lazer
+  * Alimentação e Restaurantes
+  * Transporte Público
+* **Localização e Destaque:** Seleção individual de estabelecimentos na listagem lateral com reposicionamento automático do foco do mapa e abertura do marcador correspondente.
+* **Alternância de Tema:** Suporte a modo visual claro e escuro integrado aos estilos globais do sistema.
 
 ---
 
-## 📂 Estrutura do Projeto
+## 4. Tecnologias Empregadas
+
+### Frontend e Interface
+* **Next.js:** Estrutura da aplicação e arquitectura cliente-servidor (App Router e React Server Components).
+* **TypeScript:** Verificação estática de tipos e manutenibilidade do código-fonte.
+* **Tailwind CSS v4:** Definição de estilos utilitários e paleta baseada no espaço de cores OKLCH.
+* **Radix UI / shadcn/ui:** Componentes de interface com foco em acessibilidade (WAI-ARIA).
+* **Lucide Icons:** Biblioteca gráfica vetorial para representação de categorias e elementos de navegação.
+* **Leaflet:** Manipulação e renderização de camadas de mapas interactivos e marcadores espaciais.
+
+### Backend e Serviços Geoespaciais
+* **Next.js Route Handlers:** Camada de API interna do servidor para orquestração de pedidos assíncronos.
+* **OpenStreetMap (OSM):** Base cartográfica colaborativa e aberta de elementos urbanos.
+* **Overpass API:** Execução de consultas espaciais com a linguagem Overpass QL.
+* **Nominatim API:** Serviço de geocodificação directa e reversa de endereços e coordenadas.
+
+---
+
+## 5. Estrutura do Repositório
 
 ```text
 ├── app/
 │   ├── api/
-│   │   ├── geocode/route.ts       # Comunicação com a Nominatim API
-│   │   └── score/route.ts         # Consulta Overpass QL e cálculo do score
-│   ├── globals.css                # Configurações do Tailwind CSS v4 e temas
-│   ├── layout.tsx                 # Root Layout e provedor de metadados
-│   └── page.tsx                   # Página principal que orquestra mapa e painel
+│   │   ├── geocode/route.ts       # Integração com o serviço de geocodificação Nominatim
+│   │   └── score/route.ts         # Execução das consultas Overpass QL e cálculo do score
+│   ├── globals.css                # Configuração dos tokens de estilo, tema e Tailwind v4
+│   ├── layout.tsx                 # Layout raiz da aplicação e metadados de página
+│   └── page.tsx                   # Controlador da página principal (orquestração do mapa e painel)
 ├── components/
-│   ├── address-search.tsx         # Campo de busca e geocodificação
-│   ├── category-card.tsx          # Card de categoria com lista expansível
-│   ├── location-map.tsx           # Componente do Leaflet com marcadores
-│   ├── results-panel.tsx          # Painel lateral com resumo e pontuação
-│   ├── score-display.tsx          # Visualizador circular da nota
-│   └── theme-provider.tsx         # Provedor de temas (Dark/Light Mode)
+│   ├── address-search.tsx         # Componente de pesquisa e seleção preditiva de endereços
+│   ├── category-card.tsx          # Card analítico da categoria com listagem expansível de locais
+│   ├── location-map.tsx           # Instanciação dinâmica do Leaflet e gestão dos marcadores
+│   ├── results-panel.tsx          # Painel lateral informativo dos resultados consolidados
+│   ├── score-display.tsx          # Indicador circular SVG da pontuação calculada
+│   └── theme-provider.tsx         # Provedor de contexto para alternância de tema
 ├── lib/
-│   └── utils.ts                   # Utilitários de classes CSS (cn)
-├── public/                        # Ícones e recursos visuais estáticos
-├── package.json                   # Dependências e scripts do projeto
-└── tsconfig.json                  # Configuração do TypeScript
+│   └── utils.ts                   # Funções utilitárias partilhadas
+├── public/                        # Ficheiros estáticos e ícones
+├── package.json                   # Dependências e scripts de execução do ecossistema Node.js
+└── tsconfig.json                  # Parâmetros de compilação do TypeScript
